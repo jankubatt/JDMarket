@@ -4,7 +4,7 @@
   "description": "E-Shop for JDM Cars",
   "main": "server.js",
   "scripts": {
-    "start": "node ./server.js"
+    "start": "node server.js"
   },
   "keywords": [
     "jdm",
