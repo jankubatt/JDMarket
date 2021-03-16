@@ -7,7 +7,7 @@
 const express = require("express");
 const app = express();
 const mysql = require('mysql');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const session = require('express-session');
 
 const pool = mysql.createPool({
@@ -31,13 +31,15 @@ app.use(session({
 }));
 
 app.post("/insertUser", (req, res) => {
-    bcrypt.hash(req.body.pass, 10, (err, hash) => {
-        pool.getConnection((err, connection) => {
-            if (err) throw err;
-            let sql = `INSERT INTO users (name, password, email) VALUES ('${req.body.name}', '${hash}', '${req.body.email}')`;
-            connection.query(sql, (err, result) => {
-                connection.release();
+    bcrypt.genSalt(10, function(err, salt) {
+        bcrypt.hash(req.body.pass, salt, (err, hash) => {
+            pool.getConnection((err, connection) => {
                 if (err) throw err;
+                let sql = `INSERT INTO users (name, password, email) VALUES ('${req.body.name}', '${hash}', '${req.body.email}')`;
+                connection.query(sql, (err, result) => {
+                    connection.release();
+                    if (err) throw err;
+                });
             });
         });
     });
