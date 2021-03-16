@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JDMarket</title>
+
+    <script src="../src/js/jquery-3.5.1.min.js"></script>
+    <script src="../src/js/popper.min.js"></script>
+    <link rel="stylesheet" href="../src/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../src/css/index.css">
+    <script src="../src/js/bootstrap.min.js"></script>
+    <script src="../src/js/fontawesome.js"></script>
+    <link rel="stylesheet" href="../src/css/jquery-ui.min.css">
+    </link>
+    <link rel="stylesheet" href="../src/css/jquery-ui.structure.min.css">
+    </link>
+    <link rel="stylesheet" href="../src/css/jquery-ui.theme.min.css">
+    </link>
+    <script src="../src/js/jquery-ui.min.js"></script>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="text-dark navbar-brand" href="../index.html">JDMarket</a>
+            <ul class="navbar-nav">
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
+                        style="width: 40em;">
+                    <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./signup.html">Sign Up</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./login.html">Log In</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="d-flex" id="wrapper">
+
+
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container">
+                <form>
+                    <div class="form-group">
+                        <label for="signupName">Name:</label>
+                        <input type="text" class="form-control" id="signupName" aria-describedby="name"
+                            placeholder="Name" maxlength="64">
+                        <small id="name" class="form-text text-muted">e.g. your full name or nickname</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupEmail">Email address</label>
+                        <input type="email" class="form-control" id="signupEmail" aria-describedby="email"
+                            placeholder="Email adress">
+                    </div>
+                    <div class="form-group">
+                        <label for="signupPassword">Password</label>
+                        <input type="password" class="form-control" id="signupPassword" placeholder="Password">
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="signupTerms">
+                        <label class="form-check-label" for="signupTerms">I agree with the <a href="./terms.html">terms
+                                and conditions.</a></label>
+                    </div>
+                    <button id="signupSubmit" type="submit" class="btn btn-lg btn-outline-dark float-right">Sign
+                        Up</button>
+                </form>
+
+                <p id="errorMessage" class="text-danger"></p>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+
+    <script src="../src/js/signup.js"></script>
+</body>
+
+</html>

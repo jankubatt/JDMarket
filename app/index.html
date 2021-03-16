@@ -1,0 +1,142 @@
+<!--
+    Author: Jan Kubat
+    Web: jankubat-it.cz
+    Twitter: JanKubat8
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>JDMarket</title>
+
+		<link rel="stylesheet" href="./src/css/bootstrap.min.css">
+		<link rel="stylesheet" href="./src/css/index.css">
+		<link rel="stylesheet" href="./src/css/jquery-ui.min.css"></link>
+		<link rel="stylesheet" href="./src/css/jquery-ui.structure.min.css"></link>
+		<link rel="stylesheet" href="./src/css/jquery-ui.theme.min.css"></link>	
+	</head>
+
+	<body>
+		<!--Navbar-->
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<div class="container-fluid">
+				<a class="text-dark navbar-brand" href="./index.html">JDMarket</a>
+				<ul class="navbar-nav">
+					<form class="form-inline my-2 my-lg-0">
+						<input id="search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" style="width: 40em;">
+					</form>
+				</ul>
+				<ul class="navbar-nav" id="items"></ul>
+			</div>
+		</nav>
+		<!--Navbar-->
+
+		<div class="d-flex" id="wrapper">
+			<!-- Sidebar -->
+			<div class="bg-light" id="sidebar-wrapper">
+				<div class="list-group list-group-flush">
+					<div class="list-group-item list-group-item-action bg-light">
+						<label for="amount">Price:</label>
+						<div id="slider-range"></div>
+
+						<form action="" class="form-horizontal">
+							<div class="form-group row">
+								<div class="col">
+									<input class="form-control" type="text" id="amountFrom" style="border:0; color:#292b2c; background-color: #f7f7f7; font-weight:bold;" readonly>
+								</div>
+								<div class="col">
+									<input class="form-control text-right" type="text" id="amountTo" style="border:0; color:#292b2c; background-color: #f7f7f7; font-weight:bold;" readonly>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div id="rating" class="list-group-item list-group-item-action bg-light">Rating<br>
+						<div class="text-center">
+							<i class="far fa-star" id="star1"></i>
+							<i class="far fa-star" id="star2"></i>
+							<i class="far fa-star" id="star3"></i>
+							<i class="far fa-star" id="star4"></i>
+							<i class="far fa-star" id="star5"></i>
+						</div>
+					</div>
+					<div class="list-group-item list-group-item-action bg-light">Vehicle<br>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" id="checkHonda" value="honda">
+							<label class="form-check-label">Honda</label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" id="checkLexus" value="lexus">
+							<label class="form-check-label">Lexus</label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" id="checkMazda" value="mazda">
+							<label class="form-check-label">Mazda</label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" id="checkMitsubishi" value="mitsubishi">
+							<label class="form-check-label">Mitsubishi</label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" id="checkNissan" value="nissan">
+							<label class="form-check-label">Nissan</label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" id="checkSubaru" value="subaru">
+							<label class="form-check-label">Subaru</label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" id="checkSuzuki" value="suzuki">
+							<label class="form-check-label">Suzuki</label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" id="checkToyota" value="toyota">
+							<label class="form-check-label">Toyota</label>
+						</div>
+					</div>
+					<div class="list-group-item list-group-item-action bg-light">Make Year<br>
+						<select class="form-control" id="makeYear"></select>
+					</div>
+					<div class="list-group-item list-group-item-action bg-light">Kilometers to<br>
+						<select class="form-control" id="kilometers">
+							<option>200000+</option>
+							<option>5000</option>
+							<option>10000</option>
+							<option>25000</option>
+							<option>50000</option>
+							<option>75000</option>
+							<option>100000</option>
+							<option>125000</option>
+							<option>150000</option>
+							<option>175000</option>
+							<option>200000</option>
+						</select>
+					</div>
+					<div class="list-group-item list-group-item-action bg-light text-center">
+						<button id="filter" class="btn btn-dark">Apply Filters</button><br><br>
+						<button id="filterRemove" class="btn btn-dark">Remove Filters</button>
+					</div>
+				</div>
+			</div>
+			<!--Sidebar-->
+
+			<!--Content-->
+			<div id="page-content-wrapper">
+				<div id="products" class="container-fluid"></div>
+			</div>
+			<!--Content-->
+
+			<!--Scripts-->
+			<script src="./src/js/jquery-3.5.1.min.js"></script>
+			<script src="./src/js/popper.min.js"></script>
+			<script src="./src/js/bootstrap.min.js"></script>
+			<script src="./src/js/fontawesome.js"></script>
+			<script src="./src/js/jquery-ui.min.js"></script>
+			<script src="./src/js/index.js"></script>
+			<script src="./src/js/loadProducts.js"></script>
+			<script src="./src/js/search.js"></script>
+			<!--Scripts-->
+	</body>
+</html>
