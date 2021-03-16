@@ -10,13 +10,13 @@ const mysql = require('mysql');
 const bcrypt = require('bcryptjs');
 const session = require('express-session');
 
-const pool = mysql.createPool({
+const pool = mysql.createPool(process.env.JAWSDB_URL/*{
     connectionLimit: 10,
     host: "localhost",
     user: "jdmarket",
     password: "jdmarket",
     database: "jdmarket"
-});
+}*/);
 
 app.use(express.static('app'));
 var bodyParser = require('body-parser');
