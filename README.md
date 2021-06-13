@@ -1,5 +1,5 @@
 # JDMarket
-Simple E-Shop with JDM cars. I just tried to make some shop.
+Simple E-Shop with JDM cars. Add your desired vehicles to your cart and see, how much money they cost. Filters available.
 
 ![img](https://github.com/jankubatt/JDMarket/blob/main/jdmarket.png)
 
